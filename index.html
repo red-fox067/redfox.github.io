@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Painel PS4</title>
+    <style>
+        body {
+            background-color: #0b0f19;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 60px;
+            margin: 0;
+        }
+        h1 {
+            color: #0070d1;
+            font-size: 28px;
+        }
+        p {
+            color: #a0aab5;
+            font-size: 16px;
+        }
+        .btn-container {
+            margin-top: 40px;
+        }
+        button {
+            background-color: #0070d1;
+            color: white;
+            border: none;
+            padding: 22px 45px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 112, 209, 0.4);
+        }
+        /* Estilo de foco essencial para facilitar o uso com o controle do PS4 */
+        button:focus, button:hover {
+            background-color: #0085ff;
+            outline: 4px solid #ffcc00;
+        }
+        #status {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #00ffcc;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Painel de Exploit & Payloads</h1>
+    <p>Selecione a opção abaixo para carregar os scripts:</p>
+    
+    <div class="btn-container">
+        <!-- O botão que o usuário aperta -->
+        <button onclick="executarPayload()">RUN</button>
+    </div>
+    
+    <div id="status">Aguardando comando...</div>
+
+    <script>
+        function executarPayload() {
+            const statusDiv = document.getElementById('status');
+            statusDiv.style.color = "#ffcc00";
+            statusDiv.innerText = "Carregando ambiente...";
+            
+            setTimeout(function() {
+                try {
+                    // Simulação da execução do script/payload no navegador do console
+                    statusDiv.style.color = "#00ffcc";
+                    statusDiv.innerText = "✅ Payload injetado com sucesso!";
+                    
+                    // SEU CÓDIGO JS / EXPLOIT REAL ENTRA AQUI NO FUTURO
+                    
+                } catch(e) {
+                    statusDiv.style.color = "#ff4757";
+                    statusDiv.innerText = "❌ Erro na execução: " + e.message;
+                }
+            }, 1200);
+        }
+    </script>
+
+</body>
+</html>
