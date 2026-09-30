@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Destino</title>
     <style>
         body {
@@ -10,14 +11,37 @@
             font-family: Arial, sans-serif;
             text-align: center;
             padding-top: 100px;
+            margin: 0;
         }
         h1 {
             color: #00ffcc;
+            font-size: 32px;
+        }
+        #mensagem {
+            margin-top: 30px;
+            font-size: 24px;
+            color: #ffcc00;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <h1>Sucesso! Você chegou na página final.</h1>
-    <p>O redirecionamento funcionou perfeitamente.</p>
+
+    <h1>Painel Secundário</h1>
+    <p>A página foi aberta com sucesso.</p>
+    
+    <!-- Div onde o texto automático vai aparecer -->
+    <div id="mensagem">Carregando código...</div>
+
+    <script>
+        // Assim que a janela termina de carregar, o código roda sozinho
+        window.onload = function() {
+            setTimeout(function() {
+                const caixaMensagem = document.getElementById('mensagem');
+                caixaMensagem.innerText = "código rodado";
+            }, 800); // Espera um pouquinho para dar o efeito visual
+        };
+    </script>
+
 </body>
 </html>
