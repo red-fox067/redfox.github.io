@@ -50,20 +50,37 @@
 <body>
 
     <h1>Painel de Teste PS4</h1>
-    <p>Pressione o botão para rodar o comando:</p>
+    <p>Pressione o botão para iniciar:</p>
     
     <div class="btn-container">
-        <button onclick="executarPayload()">RUN</button>
+        <!-- O botão tem um ID para conseguirmos mudar o texto dele via código -->
+        <button id="meuBotao" onclick="executarAcao()">RUN</button>
     </div>
     
     <div id="status">Aguardando...</div>
 
     <script>
-        function executarPayload() {
+        function executarAcao() {
+            const botao = document.getElementById('meuBotao');
             const statusDiv = document.getElementById('status');
             
-            // Aqui mudamos o texto para "executed" exatamente como você pediu
-            statusDiv.innerText = "executed";
+            // 1. O botão vira "Running..." e o status atualiza
+            botao.innerText = "Running...";
+            botao.disabled = true; // Desativa o botão para não clicarem de novo
+            statusDiv.style.color = "#ffcc00";
+            statusDiv.innerText = "Carregando...";
+            
+            // 2. Depois de 1.2 segundos, simula o "executed" e prepara o redirecionamento
+            setTimeout(function() {
+                statusDiv.style.color = "#00ffcc";
+                statusDiv.innerText = "executed";
+                
+                // 3. Logo em seguida (mais 1 segundo), abre o outro site HTML
+                setTimeout(function() {
+                    window.location.href = "https://red-fox067.github.io/redfox.github.io/html/";
+                }, 1000);
+                
+            }, 1200);
         }
     </script>
 
